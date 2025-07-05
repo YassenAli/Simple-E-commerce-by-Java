@@ -31,23 +31,6 @@ E-Commerce/src/
             │   └── InsufficientFundsException.java
             └── Main.java
 ```
-
-<!-- ---
-
-## 🛠 Layers & Responsibilities
-
-* **Model** (`model/`): Domain entities and interfaces
-
-  * `Product`, `Customer`, `Shippable`, `ProductFactory`
-* **Service** (`service/`): Business logic
-
-  * `Cart`, `ECommerce`, `ShippingService`
-* **Exception** (`exception/`): Custom runtime exceptions for clear error handling
-
-  * `EmptyCartException`, `OutOfStockException`, `ExpiredProductException`, `InsufficientFundsException`
-
-Each layer enforces the **Single Responsibility Principle**, keeping code easy to navigate and maintain. -->
-
 ---
 
 ## 🎯 Object‑Oriented Design
@@ -75,18 +58,3 @@ This project leverages core OOP concepts:
 
 * **Strategy**: The `Shippable` interface is our strategy. Different products supply their own weight logic, and `ShippingService` applies a consistent shipping algorithm.
 * **Factory**: `ProductFactory` centralizes creation of perishable vs. digital products, hiding construction details and improving readability.
-
-<!-- This combination demonstrates the ability to apply patterns for flexible, maintainable code. -->
-
-<!-- ---
-
-## 🛠️ Technologies & Tools
-
-- **Java 21**
-- **IntelliJ IDEA**
-- Build with **Maven** (or switch to Gradle if you prefer)
-- No external dependencies -->
-<!-- 
----
-
-© 2025 Yassen Ali  |  [GitHub](https://github.com/YassenAli/Simple-E-commerce-by-Java)  |  Java 21, IntelliJ IDEA -->

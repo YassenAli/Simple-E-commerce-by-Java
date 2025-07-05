@@ -11,7 +11,7 @@ A console‑based e‑commerce system demonstrating key OOP concepts, SOLID desi
 ## 📂 Package Structure
 
 ```
-src/
+E-Commerce/src/
 └── main/
     └── java/
         └── org.example/

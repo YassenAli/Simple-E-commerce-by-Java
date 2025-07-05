@@ -4,7 +4,7 @@ A console‑based e‑commerce system demonstrating key OOP concepts, SOLID desi
 
 ## Class Diagram
 
-![UML Diagram](assets/UML.png)
+![UML Diagram](assets/UML.jpg)
 
 ---
 

@@ -2,41 +2,91 @@
 
 A console‑based e‑commerce system demonstrating key OOP concepts, SOLID design principles, Organized into clear layers (model, service, exception), built with Java 21 in IntelliJ IDEA.
 
+## Class Diagram
+
+![UML Diagram](assets/UML.png)
+
+---
+
+## 📂 Package Structure
+
+```
+src/
+└── main/
+    └── java/
+        └── org.example/
+            ├── model/
+            │   ├── Product.java
+            │   ├── Customer.java
+            │   ├── Shippable.java
+            │   └── ProductFactory.java
+            ├── service/
+            │   ├── Cart.java
+            │   ├── ECommerce.java
+            │   └── ShippingService.java
+            ├── exception/
+            │   ├── EmptyCartException.java
+            │   ├── OutOfStockException.java
+            │   ├── ExpiredProductException.java
+            │   └── InsufficientFundsException.java
+            └── Main.java
+```
+
+<!-- ---
+
+## 🛠 Layers & Responsibilities
+
+* **Model** (`model/`): Domain entities and interfaces
+
+  * `Product`, `Customer`, `Shippable`, `ProductFactory`
+* **Service** (`service/`): Business logic
+
+  * `Cart`, `ECommerce`, `ShippingService`
+* **Exception** (`exception/`): Custom runtime exceptions for clear error handling
+
+  * `EmptyCartException`, `OutOfStockException`, `ExpiredProductException`, `InsufficientFundsException`
+
+Each layer enforces the **Single Responsibility Principle**, keeping code easy to navigate and maintain. -->
+
+---
+
+## 🎯 Object‑Oriented Design
+
+This project leverages core OOP concepts:
+
+* **Encapsulation**: Classes hide internal details and expose only necessary methods (e.g., `Product.reduceQuantity(...)`).
+* **Abstraction**: The `Shippable` interface defines a contract; `ECommerce` and `ShippingService` operate on this abstraction without knowing product internals.
+* **Inheritance & Polymorphism**: All shippable products implement `Shippable`, enabling interchangeable treatment at runtime.
+* **Modularity & Reusability**: Clear separation allows adding new product types or services with minimal changes.
+
+---
+
+## 🔧 SOLID Principles
+
+1. **Single Responsibility**: One class ⇒ one job (e.g., `Cart` only manages item selection).
+2. **Open/Closed**: Extend behavior by adding new `Shippable` implementations or exception types—no code modification needed.
+3. **Liskov Substitution**: Any `Shippable`-implementing object works seamlessly in shipping logic.
+4. **Interface Segregation**: Only products requiring shipping implement `Shippable`; others remain simple.
+5. **Dependency Inversion**: High‑level modules (`ECommerce`) depend on abstractions (`Shippable`), not on concrete classes.
+
+---
+
+## 🔄 Design Pattern: Strategy & Factory
+
+* **Strategy**: The `Shippable` interface is our strategy. Different products supply their own weight logic, and `ShippingService` applies a consistent shipping algorithm.
+* **Factory**: `ProductFactory` centralizes creation of perishable vs. digital products, hiding construction details and improving readability.
+
+<!-- This combination demonstrates the ability to apply patterns for flexible, maintainable code. -->
+
+<!-- ---
+
 ## 🛠️ Technologies & Tools
 
 - **Java 21**
 - **IntelliJ IDEA**
 - Build with **Maven** (or switch to Gradle if you prefer)
-- No external dependencies
+- No external dependencies -->
+<!-- 
+---
 
-## 📦 Project Structure
-
-## 🎯 Object‑Oriented Design
-
-This project uses OOP to keep responsibilities clear:
-- *Encapsulation*: Each class (e.g., Product, Cart, Customer) manages its own state and exposes only what’s necessary via methods.
-- *Abstraction*: The Shippable interface hides shipping implementation details so services work against a simple contract.
-- *Modularity*: Classes have single, focused roles (see SOLID below), making code easier to maintain.
-- *Reusability*: New product types or shipping behaviors simply implement Shippable without touching existing logic.
-
-## 🔧 SOLID Principles
-1. Single Responsibility
-- Product handles product data/expiry logic.
-- Cart tracks item selections and enforces quantity limits.
-- ECommerce orchestrates checkout flow.
-- ShippingService only prints shipment summaries.
-
-2. Open/Closed
-- You can extend shipping logic by adding new Shippable implementations (e.g. DigitalProduct) without modifying existing classes.
-
-3. Liskov Substitution
-- Any Shippable (current or future) works in ShippingService and ECommerce without surprises.
-
-4.  Interface Segregation
-- Only products that ship implement Shippable; no “fat” interfaces.
-
-5. Dependency Inversion
-- High‑level code in ECommerce depends on the Shippable abstraction, not on concrete Product details.
-
-
-
+© 2025 Yassen Ali  |  [GitHub](https://github.com/YassenAli/Simple-E-commerce-by-Java)  |  Java 21, IntelliJ IDEA -->
